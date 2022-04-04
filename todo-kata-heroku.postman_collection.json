@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "3ec1ad3f-eca0-4b78-8511-36e7f349c0ee",
+		"name": "todo-kata-heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "新增單筆代辦",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"打API 新增項目3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cryptic-scrubland-74061.herokuapp.com/todos",
+					"protocol": "https",
+					"host": [
+						"cryptic-scrubland-74061",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除單筆代辦",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://cryptic-scrubland-74061.herokuapp.com/todos/b5cd379d-f747-409a-afea-971c0571c14d",
+					"protocol": "https",
+					"host": [
+						"cryptic-scrubland-74061",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"todos",
+						"b5cd379d-f747-409a-afea-971c0571c14d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改單筆代辦",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"打API 修改項目\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cryptic-scrubland-74061.herokuapp.com/todos/438b4d38-c0b8-4734-aa1d-f623187d1a32",
+					"protocol": "https",
+					"host": [
+						"cryptic-scrubland-74061",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"todos",
+						"438b4d38-c0b8-4734-aa1d-f623187d1a32"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "取得全部代辦",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cryptic-scrubland-74061.herokuapp.com/todos",
+					"protocol": "https",
+					"host": [
+						"cryptic-scrubland-74061",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除全部代辦",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://cryptic-scrubland-74061.herokuapp.com/todos",
+					"protocol": "https",
+					"host": [
+						"cryptic-scrubland-74061",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
