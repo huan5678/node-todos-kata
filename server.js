@@ -13,8 +13,8 @@ const headers = {
 const todos = [];
 
 function httpRequestListener (req, res) {
-  console.log(req.url);
-  console.log(req.method);
+  // console.log(req.url);
+  // console.log(req.method);
 
   let body = '';
   req.on('data', (chunk) => {
@@ -47,6 +47,8 @@ function httpRequestListener (req, res) {
                 '成功新增一筆代辦',
                 todos
               )
+            } else {
+              return false;
             }
           } catch {
             errorHandle(res, headers)
@@ -80,13 +82,17 @@ function httpRequestListener (req, res) {
         req.on('end', () => {
           try {
           const id = req.url.split('/').pop();
-          const title = JSON.parse(body).title;
-          todos.map(todo => {
-            if (todo.id === id) {
-              todo.title = title;
+            const title = JSON.parse(body).title;
+            if (title !== undefined) {
+              todos.map(todo => {
+                if (todo.id === id) {
+                  todo.title = title;
+                }
+              })
+              successHandle(res, headers, '已成功修改一筆代辦', todos);
+            } else {
+              return false;
             }
-          })
-          successHandle(res, headers, '已成功修改一筆代辦', todos);
           } catch {
             errorHandle(res, headers);
           }
